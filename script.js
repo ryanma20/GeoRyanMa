@@ -8,34 +8,3 @@ const map = new mapboxgl.Map({
 });
 // 新增一個導航控制器 可選
 map.addControl(new mapboxgl.NavigationControl());
-// 等地圖加載完成後，載入 GeoJSON 數據
-map.on('load', function() {
-    // 添加 GeoJSON 數據源，從 GitHub 原始 URL 加載
-    map.addSource('geojson-data', {
-        type: 'geojson',
-        data: '/Users/ryanma/gis-map-platform/Neihu.geojson' // 使用 GitHub 原始 URL
-    });
-
-    // 添加層來顯示 GeoJSON 點數據
-    map.addLayer({
-        id: 'points',
-        type: 'circle',
-        source: 'geojson-data',
-        paint: {
-            'circle-color': '#FF5733',
-            'circle-radius': 8
-        }
-    });
-
-    // 添加層來顯示 GeoJSON 多邊形數據
-    map.addLayer({
-        id: 'polygons',
-        type: 'fill',
-        source: 'geojson-data',
-        paint: {
-            'fill-color': 'rgba(255, 87, 51, 0.5)', // 半透明橙色
-            'fill-outline-color': '#FF5733'
-        }
-    });
-});
-
