@@ -6,7 +6,7 @@ const map = new mapboxgl.Map({
     container: 'map', // 目標容器元素的ID
     style: 'mapbox://styles/mapbox/streets-v11', // 使用的 Mapbox 樣式
     center: [121.571392, 25.078936], // 設定初始地圖中心經緯度
-    zoom: 5 // 設定初始縮放級別
+    zoom: 12 // 設定初始縮放級別
 });
 
 // 可選：新增一個導航控制器
