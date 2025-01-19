@@ -1,8 +1,9 @@
-/* 讓地圖佔據整個頁面 */
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+@media (max-width: 768px) {
+    #map {
+        height: 80vh; /* 縮小地圖高度 */
+    }
+
+    header {
+        font-size: 1.2rem;
+    }
 }
