@@ -1,9 +1,7 @@
-@media (max-width: 768px) {
-    #map {
-        height: 80vh; /* 縮小地圖高度 */
-    }
-
-    header {
-        font-size: 1.2rem;
-    }
+#mapViewDiv {
+    width: 100%;          /* 地圖寬度設為全屏 */
+    height: 100vh;        /* 地圖高度設為視窗高度 */
+    border: 2px solid #ccc;  /* 可選：為地圖添加邊框 */
+    margin: 0;            /* 清除任何外邊距 */
+    padding: 0;           /* 清除任何內邊距 */
 }
