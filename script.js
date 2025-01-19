@@ -13,7 +13,7 @@ map.on('load', function() {
     // 添加 GeoJSON 數據源，從 GitHub 原始 URL 加載
     map.addSource('geojson-data', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ryanma20/GeoRyanMa/fceaf56468533af1737f2b8a3e60f222dd6269bc/Neihui.geojson' // 使用 GitHub 原始 URL
+        data: '/Users/ryanma/gis-map-platform/Neihu.geojson' // 使用 GitHub 原始 URL
     });
 
     // 添加層來顯示 GeoJSON 點數據
