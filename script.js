@@ -19,7 +19,7 @@ require([
 
     // GeoJSONLayer 用來顯示 GeoJSON 數據
     var geojsonLayer = new GeoJSONLayer({
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/fceaf56468533af1737f2b8a3e60f222dd6269bc/Neihui.geojson"
+        url: "https://github.com/ryanma20/GeoRyanMa/blob/cd84c783c482f6711320a7513f973bbe389c474d/Neihu.geojson"
     });
 
     // 將 GeoJSONLayer 添加到地圖
