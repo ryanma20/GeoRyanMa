@@ -1,27 +1,35 @@
 require([
     "esri/Map",
     "esri/views/MapView",
-    "esri/layers/TileLayer"
-], function(Map, MapView, TileLayer) {
-    
-    // 創建 ArcGIS 地圖
+    "esri/layers/GeoJSONLayer"
+], function(Map, MapView, GeoJSONLayer) {
+
+    // 創建地圖
     var map = new Map({
-        basemap: "topo-vector" // 這裡你可以選擇其他內建的 ArcGIS 地圖樣式
+        basemap: "topo-vector" // 使用底圖
     });
 
-    // 創建 MapView，將地圖放入指定的容器
+    // 創建 MapView（地圖視圖）
     var view = new MapView({
-        container: "mapViewDiv",
+        container: "mapViewDiv", // 指定地圖容器 ID
         map: map,
-        center: [121.5645, 25.0330], // 這裡的座標設為台北
-        zoom: 13
+        center: [121.573, 25.076], // 設定中心點座標（內科）
+        zoom: 13 // 設定縮放級別
     });
 
-    // 使用 ArcGIS 提供的瓦片圖層（TileLayer），這裡可以使用 ArcGIS Online 的免費瓦片服務
-    var tileLayer = new TileLayer({
-        url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer" // 這是 ArcGIS Online 的影像瓦片服務
+    // 創建 GeoJSONLayer
+    var geojsonLayer = new GeoJSONLayer({
+        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Neihu.geojson" // 更新的 GeoJSON URL
     });
 
-    // 將圖層添加到地圖
-    map.addLayer(tileLayer);
+    // 加入 GeoJSONLayer 到地圖
+    map.add(geojsonLayer);
+
+    // 當 GeoJSON 加載完成時，調整視圖範圍
+    geojsonLayer.on("load", function() {
+        view.goTo({
+            target: geojsonLayer.fullExtent
+        });
+    });
+
 });
