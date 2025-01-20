@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1Ijoicnlhbm1hMzAiLCJhIjoiY201b3NkOG11MG9yYTJtcWF6cmVua2xwZyJ9.MrpueCdCb70KgO23sbDwlQ'; // 使用你提供的 Mapbox token
+mapboxgl.accessToken = 'pk.eyJ1Ijoicnlhbm1hMzAiLCJhIjoiY202NHF4YzhlMWozbTJsc2ZocTY5Zml6ciJ9.itSMR7rZYezOyC9Mu8Qpcg'; // 使用你提供的 Mapbox token
 
 // 創建地圖
 var map = new mapboxgl.Map({
