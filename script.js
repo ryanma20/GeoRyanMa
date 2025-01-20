@@ -48,40 +48,31 @@ require([
                     width: 1
                 }
             }
-        },
-        popupTemplate: {
-            title: "{name}", // 顯示點的名稱
-            content: "{name} - 位置: {location}" // 顯示名稱及位置資訊（如果有）
         }
-    });
+});
 
-    // 為點資料的每個點顯示名稱
-    geojsonLayer2.renderer.visualVariables = [{
-        type: "size",
-        field: "name",
-        valueUnit: "pixel"
-    }];
-    
-    geojsonLayer2.on("layerview-create", function(event) {
-        event.layerView.forEachGraphic(function(graphic) {
-            var point = graphic.geometry;
-            var name = graphic.attributes.name;
+// 設置 PopupTemplate 用來顯示點資料的名稱
+    geojsonLayer2.popupTemplate = {
+        title: "{name}", // 顯示點的名稱
+        content: "{name} - 位置: {location}" // 顯示名稱及位置資訊（如果有）
+    };
 
-            var textSymbol = new TextSymbol({
-                text: name,
-                color: [255, 255, 255], // 白色文字
-                font: {
-                    size: 12,
-                    family: "Microsoft JhengHei" // 微軟黑正體字型
+    // 當滑鼠懸停在點上時顯示名稱
+    view.on("pointer-move", function(event) {
+        view.hitTest(event).then(function(response) {
+            if (response.results.length > 0) {
+                var graphic = response.results[0].graphic;
+                if (graphic.layer === geojsonLayer2) {
+                    var name = graphic.attributes.name;
+                    view.popup.open({
+                        title: "點名稱",
+                        content: name,
+                        location: event.mapPoint // 使彈出窗口在點上顯示
+                    });
                 }
-            });
-
-            var labelGraphic = new Graphic({
-                geometry: point,
-                symbol: textSymbol
-            });
-
-            view.graphics.add(labelGraphic);
+            } else {
+                view.popup.close(); // 當滑鼠不在點上時，關閉彈出視窗
+            }
         });
     });
 
