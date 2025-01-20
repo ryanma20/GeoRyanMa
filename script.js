@@ -130,21 +130,11 @@ require([
         console.error("至少一個 GeoJSON 加載失敗:", error);
     });
     
-// 創建並顯示圖例
+// 創建圖例並將其添加到視圖的左下角（HTML 容器中）
     var legend = new Legend({
         view: view
     });
 
-    // 動態創建圖例容器並設置樣式
-    var legendDiv = document.createElement("div");
-    legendDiv.id = "legendDiv"; // 設置容器 ID
-    legendDiv.style.position = "absolute";
-    legendDiv.style.top = "20px";  // 顯示位置：距頂部 20px
-    legendDiv.style.right = "20px";  // 顯示位置：距右邊 20px
-    legendDiv.style.zIndex = "99";  // 設置圖層順序，確保圖例在地圖上方
-    document.body.appendChild(legendDiv); // 將容器添加到 body 中
-
-    // 將圖例添加到新創建的容器
+    // 將圖例放置在指定的 HTML 容器中
+    var legendDiv = document.getElementById("legendDiv"); // 取得容器
     legend.container = legendDiv;
-
-});
