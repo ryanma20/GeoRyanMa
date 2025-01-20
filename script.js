@@ -34,54 +34,57 @@ require([
         };
     }
 
-    // 創建 5 個 GeoJSONLayer
-    const geojsonLayer1 = new GeoJSONLayer({
+    // Neihu.geojson 圖層（無開關按鈕，直接顯示）
+    const neihuLayer = new GeoJSONLayer({
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Neihu.geojson",
         renderer: createRenderer([255, 0, 0, 0.4]) // 紅色
     });
+    map.add(neihuLayer); // 添加到地圖上
 
-    const geojsonLayer2 = new GeoJSONLayer({
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush%20hour.geojson",
-        renderer: createRenderer([0, 255, 0, 0.4]) // 綠色
+    // 其他 4 個 GeoJSONLayer
+    const geojsonLayers = [
+        {
+            id: "layer2",
+            layer: new GeoJSONLayer({
+                url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush%20hour.geojson",
+                renderer: createRenderer([0, 255, 0, 0.4]) // 綠色
+            })
+        },
+        {
+            id: "layer3",
+            layer: new GeoJSONLayer({
+                url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/afternoon%20off%20peak%20time.geojson",
+                renderer: createRenderer([0, 0, 255, 0.4]) // 藍色
+            })
+        },
+        {
+            id: "layer4",
+            layer: new GeoJSONLayer({
+                url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/evening%20off%20peak%20time.geojson",
+                renderer: createRenderer([255, 255, 0, 0.4]) // 黃色
+            })
+        },
+        {
+            id: "layer5",
+            layer: new GeoJSONLayer({
+                url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/morning%20off%20peak%20time.geojson",
+                renderer: createRenderer([255, 0, 255, 0.4]) // 紫色
+            })
+        }
+    ];
+
+    // 添加其他圖層到地圖
+    geojsonLayers.forEach(({ layer }) => {
+        map.add(layer);
     });
 
-    const geojsonLayer3 = new GeoJSONLayer({
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/afternoon%20off%20peak%20time.geojson",
-        renderer: createRenderer([0, 0, 255, 0.4]) // 藍色
-    });
-
-    const geojsonLayer4 = new GeoJSONLayer({
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/evening%20off%20peak%20time.geojson",
-        renderer: createRenderer([255, 255, 0, 0.4]) // 黃色
-    });
-
-    const geojsonLayer5 = new GeoJSONLayer({
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/morning%20off%20peak%20time.geojson",
-        renderer: createRenderer([255, 0, 255, 0.4]) // 紫色
-    });
-
-    // 添加所有圖層到地圖
-    map.addMany([geojsonLayer1, geojsonLayer2, geojsonLayer3, geojsonLayer4, geojsonLayer5]);
-
-    // 開關按鈕控制邏輯
-    document.getElementById("toggleLayer1").addEventListener("click", () => {
-        geojsonLayer1.visible = !geojsonLayer1.visible;
-    });
-
-    document.getElementById("toggleLayer2").addEventListener("click", () => {
-        geojsonLayer2.visible = !geojsonLayer2.visible;
-    });
-
-    document.getElementById("toggleLayer3").addEventListener("click", () => {
-        geojsonLayer3.visible = !geojsonLayer3.visible;
-    });
-
-    document.getElementById("toggleLayer4").addEventListener("click", () => {
-        geojsonLayer4.visible = !geojsonLayer4.visible;
-    });
-
-    document.getElementById("toggleLayer5").addEventListener("click", () => {
-        geojsonLayer5.visible = !geojsonLayer5.visible;
+    // 設置開關按鈕邏輯
+    geojsonLayers.forEach(({ id, layer }) => {
+        const button = document.getElementById(id);
+        button.addEventListener("click", () => {
+            layer.visible = !layer.visible;
+            button.textContent = layer.visible ? `關閉 ${id}` : `開啟 ${id}`;
+        });
     });
 
 });
