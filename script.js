@@ -1,83 +1,33 @@
-// 設置 Mapbox 地圖
 mapboxgl.accessToken = 'pk.eyJ1Ijoicnlhbm1hMzAiLCJhIjoiY201b3NkOG11MG9yYTJtcWF6cmVua2xwZyJ9.MrpueCdCb70KgO23sbDwlQ';
 
-const map = new mapboxgl.Map({
-    container: 'mapViewDiv', // 地圖容器 ID
-    style: 'mapbox://styles/mapbox/streets-v11', // Mapbox 的預設地圖樣式
-    center: [121.573, 25.076], // 設定中心點座標（內科）
-    zoom: 13 // 預設縮放級別
+// 初始化地圖
+var map = new mapboxgl.Map({
+    container: 'mapViewDiv', // 地圖容器
+    style: 'mapbox://styles/mapbox/streets-v11', // 使用 Mapbox 提供的樣式
+    center: [121.076, 25.573], // 地圖中心位置 (內科)
+    zoom: 12 // 地圖縮放級別
 });
 
-// Helper 函數：創建 GeoJSON 圖層樣式
-function createLayer(color, isPolygon = false) {
-    if (isPolygon) {
-        // 面資料樣式
-        return {
-            'type': 'fill',
-            'paint': {
-                'fill-color': color, // 填充顏色與透明度
-                'fill-opacity': 0.4 // 透明度
-            }
-        };
-    } else {
-        // 點資料樣式
-        return {
-            'type': 'circle',
-            'paint': {
-                'circle-color': color, // 點的顏色
-                'circle-radius': 5, // 點的大小
-                'circle-opacity': 0.7 // 點的透明度
-            }
-        };
-    }
-}
-
-// 添加 GeoJSON 圖層
-const geojsonLayers = [
-    {
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Neihu.geojson",
-        color: 'rgba(255, 0, 0, 0.4)', // 紅色
-        name: "Neihu",
-        isPolygon: true
-    },
-    {
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush%20hour.geojson",
-        color: 'rgba(0, 255, 0, 0.4)', // 綠色
-        name: "Rush hour",
-        isPolygon: false
-    },
-    {
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/afternoon%20off%20peak%20time.geojson",
-        color: 'rgba(0, 0, 255, 0.4)', // 藍色
-        name: "Afternoon off peak time",
-        isPolygon: false
-    },
-    {
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/evening%20off%20peak%20time.geojson",
-        color: 'rgba(255, 255, 0, 0.4)', // 黃色
-        name: "Evening off peak time",
-        isPolygon: false
-    },
-    {
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/morning%20off%20peak%20time.geojson",
-        color: 'rgba(255, 0, 255, 0.4)', // 紫色
-        name: "Morning off peak time",
-        isPolygon: false
-    }
-];
-
-// 加載每個 GeoJSON 圖層到 Mapbox 地圖
-geojsonLayers.forEach(layer => {
-    map.on('load', function() {
-        map.addSource(layer.name, {
-            'type': 'geojson',
-            'data': layer.url
-        });
-
-        map.addLayer({
-            'id': layer.name,
-            'source': layer.name,
-            'paint': createLayer(layer.color, layer.isPolygon)
-        });
+// 加載 Neihu.geojson 圖層
+map.on('load', function () {
+    map.addSource('neihu', {
+        type: 'geojson',
+        data: 'https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Neihu.geojson' // Neihu.geojson 來源
     });
+
+    // 以面資料（填充顏色）顯示 Neihu 圖層
+    map.addLayer({
+        id: 'neihu-layer',
+        type: 'fill',
+        source: 'neihu',
+        paint: {
+            'fill-color': '#0080ff', // 填充顏色
+            'fill-opacity': 0.5 // 透明度
+        }
+    });
+
+    // 可選：添加圖例
+    var legend = document.createElement('div');
+    legend.innerHTML = "<strong>Neihu Area</strong>";
+    document.body.appendChild(legend);
 });
