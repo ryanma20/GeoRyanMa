@@ -21,15 +21,26 @@ require([
     var geojsonLayer = new GeoJSONLayer({
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Neihu.geojson"
     });
+    var geojsonLayer2 = new GeoJSONLayer({
+        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush%20hour.geojson"
+    });
 
     // 加入 GeoJSONLayer 到地圖
-    map.add(geojsonLayer);
+    map.add([geojsonLayer1, geojsonLayer2]);
 
     // 當 GeoJSON 加載完成時，調整視圖範圍
-    geojsonLayer.on("load", function() {
+    Promise.all([
+        geojsonLayer1.when(),
+        geojsonLayer2.when()
+    ]).then(function() {
         view.goTo({
-            target: geojsonLayer.fullExtent
+            target: [geojsonLayer1.fullExtent, geojsonLayer2.fullExtent],
+            padding: 50
+        }).catch(function(error) {
+            console.error("無法調整視圖範圍:", error);
         });
+    }).catch(function(error) {
+        console.error("GeoJSON 加載失敗:", error);
     });
 
 });
