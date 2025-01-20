@@ -1,0 +1,850 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "西湖園"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5810066,
+          25.08468198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "濱江國中"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5601662,
+          25.0798188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "松山車站(八德)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.576598,
+          25.050168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "玉成里"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5809119,
+          25.05092253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "國泰醫院"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6649754,
+          25.0716573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "捷運市政府站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.56629,
+          25.04124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "汐科站南站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6472189,
+          25.0628093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "時報廣場"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5821212,
+          25.06808488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "捷運忠孝新生站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.532693,
+          25.040288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "汐止"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6616891,
+          25.06917666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "捷運昆陽站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.593165,
+          25.050346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "九如里二"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6161708,
+          25.03500483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "錫安堂"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5495151,
+          25.14947573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "誠正國中"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6158659,
+          25.05180369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "中研新村"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.615639,
+          25.045074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "中和派出所"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5027697,
+          24.99969546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "金龍寺"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.586538,
+          25.08856804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "自強隧道"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.551896,
+          25.08586247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "碧山岩"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.59054,
+          25.085651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "南港高中"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5952331,
+          25.05295138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "新湖三路口(台北花市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.577205,
+          25.063161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "民生國中"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5676949,
+          25.06018904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "新益里"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.566269,
+          25.062445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "週美里一"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.581993,
+          25.056132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "麗山高中(環山)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5768304,
+          25.08405797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "環山路"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5717,
+          25.08607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "方濟中學"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5900055,
+          25.07696845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "汐止行政中心"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.65913,
+          25.06478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "汐止農會"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.657339,
+          25.063652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "汐止公園"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.659807,
+          25.067782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "遠東科技中心"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.650598,
+          25.063921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "松江新村"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5333498,
+          25.0612684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "汐止國小"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.654922,
+          25.066251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "文德二號公園"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.583667,
+          25.077078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "芝山岩"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5365234,
+          25.10131199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "石潭公園(成功)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.591015,
+          25.061041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "泰北中學"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5340303,
+          25.09775131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "內湖基湖路口"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5652273,
+          25.08198997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "陽明山國小"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5521,
+          25.11785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "下竹林"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5476245,
+          25.12977995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "南山高中"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.505547,
+          24.999775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "秀峰高中(忠孝東路)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.662214,
+          25.066644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "松山車站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5782061,
+          25.04980619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "大直美堤花園一"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5588327,
+          25.07983259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "敬業三路一"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5564305,
+          25.08316101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "汐科站北站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6522,
+          25.064077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "昊天嶺"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6454,
+          25.06217
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "金山泰安街口"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.528803,
+          25.04
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "光華商場"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5315442,
+          25.0456428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "南港水廠"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.615625,
+          25.049543
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "中興二村"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5148597,
+          24.99642433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "九如里一"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6170236,
+          25.03770122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "廟美里"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5005133,
+          25.00280388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "陽明山國家公園管理處"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54612,
+          25.1552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "美麗華"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5581969,
+          25.08453844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "三總內湖站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.592095,
+          25.071852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "內湖行政大樓"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5889192,
+          25.06893468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "外雙溪(至善)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5470058,
+          25.09823969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "劍潭國小"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5227513,
+          25.08106627
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "南港分局(向陽)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5937887,
+          25.05574836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "東湖站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6030148,
+          25.06116745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "湖興"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5906612,
+          25.06803087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "崇義高中(五堵車站)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.667579,
+          25.076937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "新安"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.550228,
+          25.124863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "教師中心"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.547813,
+          25.150204
+        ]
+      }
+    }
+  ]
+}
