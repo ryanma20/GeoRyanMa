@@ -35,7 +35,7 @@ require([
 
     // 創建點資料的 GeoJSONLayer (Rush hour.geojson)
     var geojsonLayer2 = new GeoJSONLayer({
-        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush%20hour.geojson",
+        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush_hour.geojson",
         renderer: {
             type: "simple",
             symbol: {
