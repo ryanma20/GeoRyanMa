@@ -54,7 +54,10 @@ require([
 // 設置 PopupTemplate 用來顯示點資料的名稱，標題使用點的 name 欄位
     geojsonLayer2.popupTemplate = {
         title: "{name}", // 使用 {name} 顯示每個點的名稱
-        content: "{name} - 位置: {location}" // 顯示名稱及位置資訊（如果有）
+        content: function(graphic) {
+            var name = graphic.attributes.name || "無名稱"; // 確保名稱存在
+            return "點名稱: " + name;
+        }
     };
 
     // 當滑鼠懸停在點上時顯示名稱
@@ -65,12 +68,23 @@ require([
                 if (graphic.layer === geojsonLayer2) {
                     var name = graphic.attributes.name; // 獲取該點的名稱
 
+                    // 調試：輸出每個點的屬性，以查看是否有 "name" 欄位
+                    console.log("點的屬性:", graphic.attributes);
+
                     // 顯示 popup
-                    view.popup.open({
-                        title: name, // 使用點的名稱作為標題
-                        content: "點名稱: " + name, // 顯示點名稱
-                        location: event.mapPoint // 使彈出窗口在點上顯示
-                    });
+                    if (name) {
+                        view.popup.open({
+                            title: name, // 使用點的名稱作為標題
+                            content: "點名稱: " + name, // 顯示點名稱
+                            location: event.mapPoint // 使彈出窗口在點上顯示
+                        });
+                    } else {
+                        view.popup.open({
+                            title: "無名稱", // 如果沒有 "name" 屬性，顯示 "無名稱"
+                            content: "此點沒有名稱", // 顯示提示信息
+                            location: event.mapPoint // 使彈出窗口在點上顯示
+                        });
+                    }
                 }
             } else {
                 view.popup.close(); // 當滑鼠不在點上時，關閉彈出視窗
