@@ -63,7 +63,9 @@ require([
             if (response.results.length > 0) {
                 var graphic = response.results[0].graphic;
                 if (graphic.layer === geojsonLayer2) {
-                    var name = graphic.attributes.name;
+                    var name = graphic.attributes.name; // 獲取該點的名稱
+
+                    // 顯示 popup
                     view.popup.open({
                         title: name, // 使用點的名稱作為標題
                         content: "點名稱: " + name, // 顯示點名稱
