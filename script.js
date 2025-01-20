@@ -51,7 +51,8 @@ require([
         }
 });
 
- // 設置 PopupTemplate 用來顯示點資料的名稱，標題使用點的 name 欄位
+
+// 設置 PopupTemplate 用來顯示點資料的名稱，標題使用點的 name 欄位
     geojsonLayer2.popupTemplate = {
         title: "{name}", // 使用 {name} 顯示每個點的名稱
         content: function(graphic) {
