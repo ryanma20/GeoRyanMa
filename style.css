@@ -1,8 +1,12 @@
-/* 設定地圖容器的大小 */
+/* 使頁面所有元素都無邊距，簡單居中顯示 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 設定地圖容器的大小，使其佔滿整個瀏覽器視口 */
 #mapViewDiv {
     height: 100vh;  /* 佔據整個瀏覽器高度 */
     width: 100%;    /* 佔據整個瀏覽器寬度 */
-    margin: 0;
-    padding: 0;
-    background-color: #222; /* 設定背景色 */
 }
