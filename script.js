@@ -41,7 +41,7 @@ require([
             symbol: {
                 type: "simple-marker", // 簡單點符號
                 style: "circle",
-                color: [0, 255, 0, 0.8], // 紅色
+                color: [255,0, 0, 0.8], // 紅色
                 size: 8,
                 outline: {
                     color: [255, 255, 255],
@@ -51,9 +51,9 @@ require([
         }
 });
 
-// 設置 PopupTemplate 用來顯示點資料的名稱
+// 設置 PopupTemplate 用來顯示點資料的名稱，標題使用點的 name 欄位
     geojsonLayer2.popupTemplate = {
-        title: "{name}", // 顯示點的名稱
+        title: "{name}", // 使用 {name} 顯示每個點的名稱
         content: "{name} - 位置: {location}" // 顯示名稱及位置資訊（如果有）
     };
 
@@ -65,8 +65,8 @@ require([
                 if (graphic.layer === geojsonLayer2) {
                     var name = graphic.attributes.name;
                     view.popup.open({
-                        title: "點名稱",
-                        content: name,
+                        title: name, // 使用點的名稱作為標題
+                        content: "點名稱: " + name, // 顯示點名稱
                         location: event.mapPoint // 使彈出窗口在點上顯示
                     });
                 }
