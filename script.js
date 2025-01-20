@@ -41,14 +41,48 @@ require([
             symbol: {
                 type: "simple-marker", // 簡單點符號
                 style: "circle",
-                color: [255, 0, 0, 0.8], // 紅色
+                color: [0, 255, 0, 0.8], // 紅色
                 size: 8,
                 outline: {
                     color: [255, 255, 255],
                     width: 1
                 }
             }
+        },
+        popupTemplate: {
+            title: "{name}", // 顯示點的名稱
+            content: "{name} - 位置: {location}" // 顯示名稱及位置資訊（如果有）
         }
+    });
+
+    // 為點資料的每個點顯示名稱
+    geojsonLayer2.renderer.visualVariables = [{
+        type: "size",
+        field: "name",
+        valueUnit: "pixel"
+    }];
+    
+    geojsonLayer2.on("layerview-create", function(event) {
+        event.layerView.forEachGraphic(function(graphic) {
+            var point = graphic.geometry;
+            var name = graphic.attributes.name;
+
+            var textSymbol = new TextSymbol({
+                text: name,
+                color: [255, 255, 255], // 白色文字
+                font: {
+                    size: 12,
+                    family: "Microsoft JhengHei" // 微軟黑正體字型
+                }
+            });
+
+            var labelGraphic = new Graphic({
+                geometry: point,
+                symbol: textSymbol
+            });
+
+            view.graphics.add(labelGraphic);
+        });
     });
 
     // 將兩個 GeoJSONLayer 添加到地圖
