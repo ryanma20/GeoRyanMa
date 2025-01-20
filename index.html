@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus commuting in Neihu Technology Park</title>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css" />
+    <style>
+        html, body, #mapViewDiv {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Neihu Map Layer</h1>
+
     <div id="mapViewDiv"></div>
 
-    <script src="https://js.arcgis.com/4.21/"></script>
-    <script src="app.js"></script>
+    <script src="https://js.arcgis.com/4.22/"></script>
+    <script src="script.js"></script> <!-- 引用外部 JS 檔案 -->
 </body>
 </html>
