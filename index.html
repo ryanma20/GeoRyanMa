@@ -1,52 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bus commuting in Neihu Technology Park</title>
-    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        #mapViewDiv {
-            width: 100%;
-            height: 80vh;
-        }
-
-        #controls {
-            margin: 10px;
-            display: flex;
-            gap: 10px;
-        }
-
-        button {
-            padding: 10px 15px;
-            background-color: #0079c1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #005a8c;
-        }
-    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css" />
     <script src="https://js.arcgis.com/4.28/"></script>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- 按鈕區 -->
-    <div id="controls">
-        <button id="layer2">關閉 layer2</button>
-        <button id="layer3">關閉 layer3</button>
-        <button id="layer4">關閉 layer4</button>
-        <button id="layer5">關閉 layer5</button>
+    <div id="viewDiv"></div>
+    <div class="layer-toggle" id="layerControl">
+        <button id="rushHourBtn">Toggle Rush Hour</button>
+        <button id="morningOffBtn">Toggle Morning Off Peak</button>
+        <button id="afternoonOffBtn">Toggle Afternoon Off Peak</button>
+        <button id="eveningOffBtn">Toggle Evening Off Peak</button>
     </div>
-
-    <!-- 地圖視圖 -->
-    <div id="mapViewDiv"></div>
+    <script src="script.js"></script>
+</body>
+</html>
