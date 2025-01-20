@@ -1,5 +1,5 @@
 /* 設定地圖容器的高度和寬度 */
-#map {
+#viewDiv {
     height: 100%;
     width: 100%;
 }
