@@ -51,7 +51,7 @@ require([
         }
 });
 
-// 設置 PopupTemplate 用來顯示點資料的名稱，標題使用點的 name 欄位
+ // 設置 PopupTemplate 用來顯示點資料的名稱，標題使用點的 name 欄位
     geojsonLayer2.popupTemplate = {
         title: "{name}", // 使用 {name} 顯示每個點的名稱
         content: function(graphic) {
@@ -61,16 +61,13 @@ require([
         }
     };
 
-    // 當滑鼠懸停在點上時顯示名稱
-    view.on("pointer-move", function(event) {
+    // 當點擊點資料時顯示名稱
+    view.on("click", function(event) {
         view.hitTest(event).then(function(response) {
             if (response.results.length > 0) {
                 var graphic = response.results[0].graphic;
                 if (graphic.layer === geojsonLayer2) {
                     var name = graphic.attributes.name; // 獲取該點的名稱
-
-                    // 調試：輸出每個點的屬性，以查看是否有 "name" 欄位
-                    console.log("點的屬性:", graphic.attributes);
 
                     // 顯示 popup
                     if (name) {
@@ -96,7 +93,7 @@ require([
                     }
                 }
             } else {
-                view.popup.close(); // 當滑鼠不在點上時，關閉彈出視窗
+                view.popup.close(); // 如果沒有點擊到任何資料，則關閉彈出視窗
             }
         });
     });
@@ -131,5 +128,13 @@ require([
     }).catch(function(error) {
         console.error("至少一個 GeoJSON 加載失敗:", error);
     });
+
+    // 創建並顯示圖例
+    var legend = new Legend({
+        view: view
+    });
+
+    // 把圖例添加到視圖
+    view.ui.add(legend, "bottom-right"); // 可以選擇位置，這裡放在右下角
 
 });
