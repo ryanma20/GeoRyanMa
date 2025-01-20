@@ -1,10 +1,8 @@
-#legendDiv {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    z-index: 99;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+/* 設定地圖容器的大小 */
+#mapViewDiv {
+    height: 100vh;  /* 佔據整個瀏覽器高度 */
+    width: 100%;    /* 佔據整個瀏覽器寬度 */
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* 設定背景色 */
 }
