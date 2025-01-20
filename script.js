@@ -6,7 +6,7 @@ require([
 
     // 創建地圖
     var map = new Map({
-        basemap: "topo-vector" // 使用底圖
+        basemap: "dark-gray" // 使用底圖
     });
 
     // 創建 MapView（地圖視圖）
