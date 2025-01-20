@@ -13,7 +13,7 @@ require([
     var view = new MapView({
         container: "mapViewDiv", // 指定地圖容器 ID
         map: map,
-        center: [121.076, 25.573], // 地圖中心位置 (內科)
+        center: [121.573, 25.076], // 地圖中心位置 (內科)
         zoom: 13 // 設定縮放級別
     });
 
