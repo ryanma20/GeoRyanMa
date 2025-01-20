@@ -102,39 +102,4 @@ require([
     // 將兩個 GeoJSONLayer 添加到地圖
     map.addMany([geojsonLayer1, geojsonLayer2]);
 
-    // 為每個圖層添加加載成功/失敗的日誌
-    geojsonLayer1.when(() => {
-        console.log("面資料 GeoJSONLayer 加載成功");
-    }).catch((error) => {
-        console.error("面資料 GeoJSONLayer 加載失敗:", error);
     });
-
-    geojsonLayer2.when(() => {
-        console.log("點資料 GeoJSONLayer 加載成功");
-    }).catch((error) => {
-        console.error("點資料 GeoJSONLayer 加載失敗:", error);
-    });
-
-    // 調整視圖範圍以顯示所有資料
-    Promise.all([
-        geojsonLayer1.when(),
-        geojsonLayer2.when()
-    ]).then(function() {
-        view.goTo({
-            target: [geojsonLayer1.fullExtent, geojsonLayer2.fullExtent],
-            padding: 50
-        }).catch(function(error) {
-            console.error("無法調整視圖範圍:", error);
-        });
-    }).catch(function(error) {
-        console.error("至少一個 GeoJSON 加載失敗:", error);
-    });
-    
-// 創建圖例並將其添加到視圖的左下角（HTML 容器中）
-    var legend = new Legend({
-        view: view
-    });
-
-    // 將圖例放置在指定的 HTML 容器中
-    var legendDiv = document.getElementById("legendDiv"); // 取得容器
-    legend.container = legendDiv;
