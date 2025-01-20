@@ -1,90 +1,69 @@
 require([
     "esri/Map",
     "esri/views/MapView",
-    "esri/layers/GeoJSONLayer",
-    "esri/symbols/SimpleFillSymbol",
-    "esri/symbols/SimpleLineSymbol",
-    "esri/Color"
-], function(Map, MapView, GeoJSONLayer, SimpleFillSymbol, SimpleLineSymbol, Color) {
-
-    // 創建地圖
+    "esri/layers/GeoJSONLayer"
+], function (Map, MapView, GeoJSONLayer) {
+    // Initialize the map
     const map = new Map({
-        basemap: "topo-vector" // 使用底圖
+        basemap: "streets-navigation-vector"
     });
 
-    // 創建 MapView（地圖視圖）
     const view = new MapView({
-        container: "mapViewDiv",
+        container: "viewDiv",
         map: map,
         center: [121.573, 25.076], // 設定中心點座標（內科）
-        zoom: 13
+        zoom: 12
     });
 
-    // Helper 函數：創建圖層樣式
-    function createRenderer(color) {
-        return {
-            type: "simple",
-            symbol: new SimpleFillSymbol({
-                color: new Color(color), // 填充顏色與透明度
-                outline: new SimpleLineSymbol({
-                    color: new Color([0, 0, 0, 0.8]), // 邊界顏色
-                    width: 2
-                })
-            })
-        };
-    }
-
-    // Neihu.geojson 圖層（無開關按鈕，直接顯示）
+    // Add Neihu layer (always visible, no button)
     const neihuLayer = new GeoJSONLayer({
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Neihu.geojson",
-        renderer: createRenderer([255, 0, 0, 0.4]) // 紅色
-    });
-    map.add(neihuLayer); // 添加到地圖上
-
-    // 其他 4 個 GeoJSONLayer
-    const geojsonLayers = [
-        {
-            id: "layer2",
-            layer: new GeoJSONLayer({
-                url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush%20hour.geojson",
-                renderer: createRenderer([0, 255, 0, 0.4]) // 綠色
-            })
-        },
-        {
-            id: "layer3",
-            layer: new GeoJSONLayer({
-                url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/afternoon%20off%20peak%20time.geojson",
-                renderer: createRenderer([0, 0, 255, 0.4]) // 藍色
-            })
-        },
-        {
-            id: "layer4",
-            layer: new GeoJSONLayer({
-                url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/evening%20off%20peak%20time.geojson",
-                renderer: createRenderer([255, 255, 0, 0.4]) // 黃色
-            })
-        },
-        {
-            id: "layer5",
-            layer: new GeoJSONLayer({
-                url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/morning%20off%20peak%20time.geojson",
-                renderer: createRenderer([255, 0, 255, 0.4]) // 紫色
-            })
-        }
-    ];
-
-    // 添加其他圖層到地圖
-    geojsonLayers.forEach(({ layer }) => {
-        map.add(layer);
+        title: "Neihu",
+        visible: true // Always visible
     });
 
-    // 設置開關按鈕邏輯
-    geojsonLayers.forEach(({ id, layer }) => {
-        const button = document.getElementById(id);
-        button.addEventListener("click", () => {
-            layer.visible = !layer.visible;
-            button.textContent = layer.visible ? `關閉 ${id}` : `開啟 ${id}`;
-        });
+    // Define other layers
+    const rushHourLayer = new GeoJSONLayer({
+        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush%20hour.geojson",
+        title: "Rush Hour",
+        visible: false
     });
 
+    const morningOffPeakLayer = new GeoJSONLayer({
+        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/morning%20off%20peak%20time.geojson",
+        title: "Morning Off Peak",
+        visible: false
+    });
+
+    const afternoonOffPeakLayer = new GeoJSONLayer({
+        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/afternoon%20off%20peak%20time.geojson",
+        title: "Afternoon Off Peak",
+        visible: false
+    });
+
+    const eveningOffPeakLayer = new GeoJSONLayer({
+        url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/evening%20off%20peak%20time.geojson",
+        title: "Evening Off Peak",
+        visible: false
+    });
+
+    // Add layers to the map
+    map.addMany([neihuLayer, rushHourLayer, morningOffPeakLayer, afternoonOffPeakLayer, eveningOffPeakLayer]);
+
+    // Layer toggle buttons
+    document.getElementById("rushHourBtn").addEventListener("click", () => {
+        rushHourLayer.visible = !rushHourLayer.visible;
+    });
+
+    document.getElementById("morningOffBtn").addEventListener("click", () => {
+        morningOffPeakLayer.visible = !morningOffPeakLayer.visible;
+    });
+
+    document.getElementById("afternoonOffBtn").addEventListener("click", () => {
+        afternoonOffPeakLayer.visible = !afternoonOffPeakLayer.visible;
+    });
+
+    document.getElementById("eveningOffBtn").addEventListener("click", () => {
+        eveningOffPeakLayer.visible = !eveningOffPeakLayer.visible;
+    });
 });
