@@ -129,13 +129,18 @@ require([
     }).catch(function(error) {
         console.error("至少一個 GeoJSON 加載失敗:", error);
     });
-
-    // 創建並顯示圖例
+    
+// 動態創建並顯示圖例
     var legend = new Legend({
         view: view
     });
 
-    // 把圖例添加到視圖
-    view.ui.add(legend, "bottom-right"); // 可以選擇位置，這裡放在右下角
+    // 動態創建圖例容器並將其添加到視圖中
+    var legendDiv = document.createElement("div");
+    legendDiv.id = "legendDiv"; // 設置容器 ID
+    document.body.appendChild(legendDiv); // 將容器添加到 body 中
+
+    // 將圖例添加到新創建的容器
+    legend.container = legendDiv;
 
 });
