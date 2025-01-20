@@ -18,7 +18,7 @@ require([
     });
     
     // 創建 GeoJSONLayer
-      var geojsonLayer1 = new GeoJSONLayer({
+    var geojsonLayer1 = new GeoJSONLayer({
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Neihu.geojson",
         renderer: {
             type: "simple",
@@ -49,10 +49,9 @@ require([
                 }
             }
         }
-});
+    });
 
-
-// 設置 PopupTemplate 用來顯示點資料的名稱，標題使用點的 name 欄位
+    // 設置 PopupTemplate 用來顯示點資料的名稱，標題使用點的 name 欄位
     geojsonLayer2.popupTemplate = {
         title: "{name}", // 使用 {name} 顯示每個點的名稱
         content: function(graphic) {
@@ -102,4 +101,4 @@ require([
     // 將兩個 GeoJSONLayer 添加到地圖
     map.addMany([geojsonLayer1, geojsonLayer2]);
 
-    });
+});
