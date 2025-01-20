@@ -9,14 +9,27 @@ const map = new mapboxgl.Map({
 });
 
 // Helper 函數：創建 GeoJSON 圖層樣式
-function createLayer(color) {
-    return {
-        'type': 'fill',
-        'paint': {
-            'fill-color': color, // 填充顏色與透明度
-            'fill-opacity': 0.4 // 透明度
-        }
-    };
+function createLayer(color, isPolygon = false) {
+    if (isPolygon) {
+        // 面資料樣式
+        return {
+            'type': 'fill',
+            'paint': {
+                'fill-color': color, // 填充顏色與透明度
+                'fill-opacity': 0.4 // 透明度
+            }
+        };
+    } else {
+        // 點資料樣式
+        return {
+            'type': 'circle',
+            'paint': {
+                'circle-color': color, // 點的顏色
+                'circle-radius': 5, // 點的大小
+                'circle-opacity': 0.7 // 點的透明度
+            }
+        };
+    }
 }
 
 // 添加 GeoJSON 圖層
@@ -24,27 +37,32 @@ const geojsonLayers = [
     {
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Neihu.geojson",
         color: 'rgba(255, 0, 0, 0.4)', // 紅色
-        name: "Neihu"
+        name: "Neihu",
+        isPolygon: true
     },
     {
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/Rush%20hour.geojson",
         color: 'rgba(0, 255, 0, 0.4)', // 綠色
-        name: "Rush hour"
+        name: "Rush hour",
+        isPolygon: false
     },
     {
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/afternoon%20off%20peak%20time.geojson",
         color: 'rgba(0, 0, 255, 0.4)', // 藍色
-        name: "Afternoon off peak time"
+        name: "Afternoon off peak time",
+        isPolygon: false
     },
     {
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/evening%20off%20peak%20time.geojson",
         color: 'rgba(255, 255, 0, 0.4)', // 黃色
-        name: "Evening off peak time"
+        name: "Evening off peak time",
+        isPolygon: false
     },
     {
         url: "https://raw.githubusercontent.com/ryanma20/GeoRyanMa/refs/heads/main/Geojsonfiles/morning%20off%20peak%20time.geojson",
         color: 'rgba(255, 0, 255, 0.4)', // 紫色
-        name: "Morning off peak time"
+        name: "Morning off peak time",
+        isPolygon: false
     }
 ];
 
@@ -58,12 +76,8 @@ geojsonLayers.forEach(layer => {
 
         map.addLayer({
             'id': layer.name,
-            'type': 'fill',
             'source': layer.name,
-            'paint': {
-                'fill-color': layer.color,
-                'fill-opacity': 0.4
-            }
+            'paint': createLayer(layer.color, layer.isPolygon)
         });
     });
 });
