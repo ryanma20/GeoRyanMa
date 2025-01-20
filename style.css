@@ -1,7 +1,21 @@
-#mapViewDiv {
-    width: 100%;          /* 地圖寬度設為全屏 */
-    height: 100vh;        /* 地圖高度設為視窗高度 */
-    border: 2px solid #ccc;  /* 可選：為地圖添加邊框 */
-    margin: 0;            /* 清除任何外邊距 */
-    padding: 0;           /* 清除任何內邊距 */
+#viewDiv {
+    height: 100vh;
+    width: 100vw;
+}
+
+.layer-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    z-index: 2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.layer-toggle button {
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px 10px;
 }
