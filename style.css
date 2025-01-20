@@ -1,4 +1,17 @@
+/* 使頁面所有元素都無邊距，簡單居中顯示 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 設定 html 和 body 的高度為 100% */
+html, body {
+    height: 100%; /* 確保頁面佔滿整個視口 */
+}
+
+/* 設定地圖容器的大小，佔滿父容器 */
 #mapViewDiv {
-    height: 100vh;  /* 佔據整個瀏覽器高度 */
+    height: 100%;  /* 讓地圖容器填滿整個視口 */
     width: 100%;    /* 佔據整個瀏覽器寬度 */
 }
