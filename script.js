@@ -25,9 +25,4 @@ map.on('load', function () {
             'fill-opacity': 0.5 // 透明度
         }
     });
-
-    // 可選：添加圖例
-    var legend = document.createElement('div');
-    legend.innerHTML = "<strong>Neihu Area</strong>";
-    document.body.appendChild(legend);
 });
